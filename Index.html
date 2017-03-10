@@ -7,10 +7,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 <title>HomeWork</title>
+
 
 </head>
 <style>
@@ -51,6 +58,50 @@ margin-left:20%;
 </style>
 
 <script>
+
+var colorsChange = [ 
+		"Blue",
+		"Green",
+		"Yellow",
+		"Pink",
+		"Red",
+		"Brown"
+		];
+		
+		function populateColors(){
+			var colorsDiv = document.getElementById("menu5");
+			
+			for ( var i = 0;  i < colorsChange.length; i++){
+			
+			var paragraph = document.createElement("p"); 
+			
+				$(paragraph).html(colorsChange[i]);
+				
+				$(colorsDiv).append(paragraph);
+				
+			}
+		};
+		
+		
+		
+		
+		$(document).ready(function (){ 
+		
+			populateColors();
+		
+		
+			$("#menu5 p").on("click", function(){
+
+				change($(this).text());
+
+				//console.log($(this).text());
+
+			});
+			
+		});
+		
+		
+
 
 function menu1over()
 {
@@ -175,9 +226,9 @@ background-image:url('cgunay.jpg')">
 	<div onmouseover="menu2over()" onmouseout="menu2out()" style="float:left; margin:10px;">
 		<span style="background-color:gray; margin:10px;">E-card Picture</span>
 		<div id="menu2" style="display:none; background-color:pink; border:solid blue 3px;">
-		<p class="highlight" onclick="changePicture('turkish.jpeg')">HEY YOOoooO!</p>
+		<p class="highlight" onclick="changePicture('istanbul.jpg')">HEY YOOoooO!</p>
 		<p class="highlight" onclick="changePicture('cengiz.jpg')">BACK IN A DAY !</p>
-		<p class="highlight" onclick="changePicture('cengiz-gunay.jpg')">:D</p>
+		<p class="highlight" onclick="changePicture('kamal.jpg')">:D</p>
 		<p class="highlight" onclick="changePicture('cgunay.jpg')">ELLO</p>
 		</div>
 		</div>
@@ -194,22 +245,36 @@ background-image:url('cgunay.jpg')">
 		</div>
 		
 	
+	
 	<div onmouseover="menu5over()" onmouseout="menu5out()" style="float:left; margin:10px;">
 		<span style="background-color:gray;">E-Card Message Color</span>
 		
+		
+		
+		
 		<div id="menu5" style="display:none; background-color:pink; border:solid blue 3px;">
-		<p class="highlight" onclick="change('Blue')">Blue</p>
-		<p class="highlight" onclick="change('Green')">Green</p>
-		<p class="highlight" onclick="change('Yellow')">Yellow</p>
-		<p class="highlight" onclick="change('Pink')">Pink</p>
-		<p class="highlight" onclick="change('Red')">Red</p>
-		<p class="highlight" onclick="change('Brown')">Brown</p>
 		</div>
 	</div>
 	</div>
 	<hr/>
 
 	<a href="https://www.google.com/" class="btn btn-info" role="button">Google</a>
+	<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Extra Links
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="https://ifunny.co/">IFunny:)</a><br>
+    <a class="dropdown-item" href="http://www.ggc.edu/">GGC</a><br>
+    <div class="dropdown-divider"></div>
+    </div>
+</div>
+	
+	
+</div>
+	
+	
+	
 	
 	</div>
 
@@ -220,7 +285,7 @@ background-image:url('cgunay.jpg')">
 <div id="mybody" style=" background-color:brown; border:solid blue 3px;">
 <div class="inside"  ;>
 <div id="message1"><h1 id="messageCG">Hope You Like it :)</h1></div>
-<img id="mypic"  src="turkish.jpeg" height="100%" width="100%"/>
+<img id="mypic"  src="istanbul.jpg" height="100%" width="100%"/>
 
 
 
@@ -233,10 +298,6 @@ background-image:url('cgunay.jpg')">
 
 </div>
 
- <script src="jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
-
+ 
 </body>
 </html>
